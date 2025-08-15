@@ -1,21 +1,18 @@
-// vite.config.js
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
-
+// vite.config.ts
+import { defineConfig } from 'vite';
+import { sveltekit } from '@sveltejs/kit/vite';
 import path from 'path';
 
 export default defineConfig({
-	plugins: [svelte()],
-
+	plugins: [sveltekit()],
 	resolve: {
 		alias: {
 			$lib: path.resolve('./src/lib'),
 		},
 	},
-
 	test: {
 		globals: true,
 		environment: 'jsdom',
 		setupFiles: './src/setupTests.js', // optional setup
 	},
-})
+});
